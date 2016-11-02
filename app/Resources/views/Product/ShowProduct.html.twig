@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'product.show.title' | trans }}{% endblock %}
+{% block content %}
+
+<h2>{{ 'product.show.header' | trans }}</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>Tipo de prenda</th>
+      <td>{{ producto.getWearType }}</td>
+    </tr>
+    <tr>
+      <th>Talla</th>
+      <td>{{ producto.getSize }}</td>
+    </tr>
+    <tr>
+      <th>Color</th>
+      <td>{{ producto.getColour }}</td>
+    </tr>
+    <tr>
+      <th>Sexo</th>
+      <td>{{ producto.getSex }}</td>
+    </tr>
+    <tr>
+      <th>Precio</th>
+      <td>€{{ producto.getPrice }}</td>
+    </tr>
+  </tbody>  
+</table>
+{% endblock %}

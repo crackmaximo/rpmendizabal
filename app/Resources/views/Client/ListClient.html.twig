@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'client.list.title' | trans }}{% endblock %}
+
+{% block content %}
+
+<h3>{{ 'client.list.header' | trans }}</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{{ 'client.id' | trans }}</th>
+      <th>{{ 'client.name' | trans }}</th>
+      <th>{{ 'client.phone' | trans }}</th>
+      <th>{{ 'client.list.edit' | trans }}</th>
+      <th>{{ 'client.list.delete' | trans }}</th> 
+    </tr>
+  </thead>
+	{% for cliente in clientes %}
+  <tbody>
+    <tr>
+      	<td><a href="{{ path('show_client',{'id': cliente.getId }) }}">{{  cliente.getId }}</a></td>
+      	<td>{{  cliente.getName }}</td>
+    	<td>{{  cliente.getPhone }}</td>
+    	<td><a href="{{ path('edit_client',{'id': cliente.getId }) }}"<span class="glyphicon glyphicon-edit"></span></a></td>
+    	<td><a href="{{ path('delete_client',{'id': cliente.getId }) }}"<span class="glyphicon glyphicon-trash"></span></a></td>
+    </tr>
+  </tbody>  
+{% endfor %}
+</table>
+{% endblock %}

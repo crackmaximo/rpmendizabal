@@ -1,0 +1,22 @@
+{% extends "Admin.html.twig" %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'product.new.title' | trans }}{% endblock %}
+
+{% block admin %}
+
+<h1>{{ 'product.new.header' | trans }}</h1>
+
+<div class="row">
+	<div class='col-sm-3'>
+		{{ form_start(form) }}		
+		{{ form_widget(form) }}		
+		{{ form_end(form) }}
+	</div>
+</div>
+
+{% endblock %}
+

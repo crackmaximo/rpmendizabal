@@ -1,0 +1,69 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'task.show.title' | trans }}{% endblock %}
+{% block content %}
+
+<h2>{{ 'task.show.title' | trans }}</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>{{ 'task.client' | trans }}</th>
+      <td>{{ task.getClient }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.taskType' | trans }}</th>
+      <td>{{ task.getTaskType }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.startDate' | trans }}</th>
+      <td>{{ task.getStartDate }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.endDate' | trans }}</th>
+      <td>{{ task.getEndDate|date("d/m/Y") }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.taskStatus' | trans }}</th>
+      <td>{{ task.getTaskStatus }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.falla' | trans }}</th>
+      <td>{{ task.getFalla }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.qty' | trans }}</th>
+      <td>{{ task.getQuantity }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.product' | trans }}</th>
+      <td>{{ task.getProduct }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.name' | trans }}</th>
+      <td>{{ task.getName }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.sizeName' | trans }}</th>
+      <td>{{ task.getSizeName }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.comment' | trans }}</th>
+      <td>{{ task.getComment }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.priceFull' | trans }}</th>
+      <td>{{ task.getPriceFull }}€</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.accountPrice' | trans }}</th>
+      <td>{{ task.getAccountPrice}}</td>
+    </tr>
+    <tr>
+      <th>{{ 'task.statusPay' | trans }}</th>
+      <td>{{ task.getStatusPay}}</td>
+    </tr>
+  </tbody>  
+</table>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'falla.show.title' | trans }}{{ falla.getName }}{% endblock %}
+
+{% block content %}
+
+<h2>{{ 'falla.show.title' | trans }}{{ falla.getName }}</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>{{ 'falla.id' | trans }}</th>
+      <td>{{ falla.getId }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'falla.name' | trans }}</th>
+      <td>{{ falla.getName }}</td>
+    </tr>
+  </tbody>  
+</table>
+{% endblock %}

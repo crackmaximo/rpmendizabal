@@ -1,0 +1,73 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        FOS\UserBundle\Model\UserInterface: bcrypt
+    
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        in_memory:
+            memory: ~
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+                # if you are using Symfony < 2.8, use the following config instead:
+                # csrf_provider: form.csrf_provider
+
+            logout:
+                  path:   fos_user_security_logout
+            anonymous:    true
+            # activate different ways to authenticate
+
+            # http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+    role_hierarchy:
+          ROLE_ADMIN:       ROLE_USER, ROLE_APP_ADMIN
+          ROLE_SUPER_ADMIN: ROLE_ADMIN
+    access_control:
+        - { path: ^/[a-z]+/product/list, roles: [ROLE_APP_ADMIN,ROLE_USER] }
+        - { path: ^/[a-z]+/product/delete, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/product/new, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/product/edit, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/product/show, roles: [ROLE_USER] }                
+        - { path: ^/[a-z]+/task/list, roles: [ROLE_APP_ADMIN,ROLE_USER] }
+        - { path: ^/[a-z]+/task/delete, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/task/new, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/task/edit, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/task/show, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/falla/list, roles: [ROLE_APP_ADMIN,ROLE_USER] }
+        - { path: ^/[a-z]+/falla/delete, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/falla/new, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/falla/edit, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/falla/show, roles: [ROLE_USER] }                
+        - { path: ^/[a-z]+/client/list, roles: [ROLE_APP_ADMIN,ROLE_USER] }
+        - { path: ^/[a-z]+/client/delete, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/client/new, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/client/edit, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/client/show, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/admin, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/admin/falla/new, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/admin/falla, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/admin/product/new, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/admin/product, roles: [ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/client/search, roles: [ROLE_USER] }
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, role: ROLE_ADMIN }

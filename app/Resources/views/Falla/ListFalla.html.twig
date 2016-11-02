@@ -1,0 +1,31 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'falla.list.title' | trans }}{% endblock %}
+
+{% block content %}
+
+<h3>{{ 'falla.list.header' | trans }}</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{{ 'falla.id' | trans }}</th>
+      <th>{{ 'falla.name' | trans }}</th>
+    {#<th>{{ 'falla.list.edit' | trans }}</th>
+      <th>{{ 'falla.list.delete' | trans }}</th> #}     
+    </tr>
+  </thead>
+	{% for falla in fallas %}
+  <tbody>
+    <tr>
+      	<td><a href="{{ path('show_falla',{'id': falla.getId }) }}">{{  falla.getId }}</a></td>
+      	<td>{{  falla.getName }}</td>
+    {#<td><a href="{{ path('edit_falla',{'id': falla.getId }) }}"<span class="glyphicon glyphicon-edit"></span></a></td>
+    	<td><a href="{{ path('delete_falla',{'id': falla.getId }) }}"<span class="glyphicon glyphicon-trash"></span></a></td>
+    #}
+    </tr>
+  </tbody>  
+{% endfor %}
+</table>
+{% endblock %}

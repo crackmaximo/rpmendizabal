@@ -1,0 +1,124 @@
+product:
+    id: 'id'
+    type: 'Tipo Prenda'
+    size: 'Talla'
+    colour: 'Color'
+    sex: 'Sexo'
+    price: 'Precio'
+    list:
+        title: 'Listado de productos'
+        header: 'Listado de productos'
+        edit: 'Editar'
+        delete: 'Eliminar'
+    new: 
+        title: 'Nuevo producto'
+        header: 'Nuevo producto'
+    invalid: 
+        price: 'El valor del precio introducido es erroneo'
+    show: 
+        title: 'Detalle producto: '
+        header: 'Producto: '    
+    form:
+        save: 'Guardar'
+        saveAndAdd: 'Guardar y continuar'
+        woman: 'Mujer'        
+client:
+    id: 'id'
+    name: 'Nombre'
+    phone: 'Telefono'
+    list:
+        title: 'Listado de clientes'
+        header: 'Listado de clientes'
+        edit: 'Editar'
+        delete: 'Eliminar'
+    new:
+        title: 'Nuevo cliente'
+    show: 
+        title: 'Detalle cliente: '
+    form:
+        save: 'Guardar'
+        saveAndAdd: 'Guardar y volver a tarea'
+        search: 'Buscar'
+falla:
+    id: 'id'
+    name: 'Nombre'
+    list:
+        title: 'Listado de fallas'
+        header: 'Listado de fallas'
+        edit: 'Editar'
+        delete: 'Eliminar'
+    new:
+        title: 'Nueva falla'
+    show: 
+        title: 'Detalle falla: '
+    form:
+        save: 'Guardar'
+        saveAndAdd: 'Guardar y continuar'
+task:
+    client: 'Cliente'
+    clientNew: 'Cliente Nuevo'
+    taskType: 'Tipo de Tarea'
+    startDate: 'Fecha de Inicio'
+    endDate: 'Fecha de entrega'
+    taskStatus: 'Estado de tarea'
+    falla: 'Falla'
+    qty: 'Cantidad'
+    product: 'Producto'
+    id: 'Id'
+    name: 'Nombre'
+    sizeName: 'Tamaño del nombre'
+    comment: 'Comentarios'
+    priceFull: 'Precio Total'
+    accountPrice: 'A cuenta'
+    statusPay: 'Estado del Pago'
+    list:
+        title: 'Listado de tareas'
+        header: 'Listado de tareas'
+        edit: 'Editar'
+        delete: 'Eliminar'
+    new:
+        title: 'Nueva tarea'
+        add: 'Añadir Cliente'
+    show: 
+        title: 'Detalle tarea: '
+        edit: 'Editar tarea'
+    form:
+        save: 'Guardar'
+        saveAndAdd: 'Guardar y continuar'
+        moneda: 'La fecha introducida no es válida (dd/mm/yyyy)'
+    search:
+        title: 'Buscar tarea'
+        searchTask: 'Buscar'
+menu:
+    user:
+        login: 'Acceder'
+        register: 'Registrarse'
+        admin: 'Administrar'
+        logout: 'Salir'
+        password_change: 'Cambio contraseña'
+        edit: 'Editar'
+    footer:
+        student: 'Alumno:'
+    item:
+        list: 'Listados'
+        client: 'Clientes'
+        task: 'Tareas'
+        product: 'Productos'
+        falla: 'Fallas'
+index:
+    id: 'Id'
+    client: 'Cliente'
+    taskType: 'Tipo de Tarea'
+    taskStatus: 'Estado de tarea'
+    falla: 'Falla'
+    priceFull: 'Precio Total'
+    header: 'Ultimos 5 pedidos'
+    nav:
+        tasks: 'Tareas'
+        searchTask: 'Buscar Tarea'
+        search: 'Buscar cliente'
+        client: 'Clientes'
+admin:
+    list: 'Listado'
+    new: 'Nuevo'
+    product: 'Productos'

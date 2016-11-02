@@ -1,0 +1,6 @@
+client:
+    phone: 
+        invalid: 'Phone number must have between 9 and 12 digits.'
+priceinvalid: 'Currency format incorrect'
+dateinvalid: 'The date entered is invalid (dd/mm/yyyy)'
+nameerror: 'Your name cannot contain a number' 

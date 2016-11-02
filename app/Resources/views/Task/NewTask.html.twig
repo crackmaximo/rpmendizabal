@@ -1,0 +1,88 @@
+{% extends "::base.html.twig" %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'task.new.title' | trans }}{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	{{ form_stylesheet(form) }}
+	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />	
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+ 	{{ form_javascript(form) }}
+{% endblock %} 
+{% block content %}
+
+<h3>{{ 'task.new.title' | trans }}</h3>
+
+{{ form_start(form) }}
+	<div class="row">
+		<div class="col-sm-8">
+			{{ form_row(form.Client) }}
+		</div>
+		<div class="col-sm-2">
+			<label>{{ 'task.clientNew' | trans }}</label><br>
+			<a href="{{ url('new_client') }}"><button type="button">{{ 'task.new.add' | trans }}</button></a>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">	
+        	{{ form_row(form.taskType) }}
+		</div>
+		<div class="col-sm-2">
+			{{ form_row(form.startDate) }}
+		</div>
+		<div class="col-sm-2">		
+        	{{ form_row(form.endDate) }}
+		</div>
+		<div class="col-sm-3">	
+			{{ form_row(form.taskStatus) }}
+		</div>
+		<div class="col-sm-3">	
+			{{ form_row(form.Falla) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-1">
+			{{ form_row(form.quantity) }}	
+		</div>
+		<div class="col-sm-4">
+			{{ form_row(form.Product) }}
+		</div>
+		<div class="col-sm-3">
+			{{ form_row(form.name) }}
+		</div>
+		<div class="col-sm-3">
+			{{ form_row(form.sizeName,{'label_attr' : {'class' : 'radio-inline'}}) }}
+		</div>
+	</div>
+	<div class="row">
+			<div class="col-sm-12">		
+        	{{ form_row(form.comment) }}
+		</div>
+	</div>	
+	<div class="row">	
+		<div class="col-sm-3">		
+        	{{ form_row(form.priceFull) }}
+		</div>
+		<div class="col-sm-3">		
+        	{{ form_row(form.statusPay) }}
+		</div>
+		<div class="col-sm-3">
+			{{ form_row(form.accountPrice) }}			
+		</div>
+	</div>
+
+		
+			{{ form_row(form.save) }}
+			{{ form_row(form.saveAndAdd) }}  	
+      
+     
+{{ form_end(form) }}
+
+{% endblock %}
+

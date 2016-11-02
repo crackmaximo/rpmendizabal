@@ -1,0 +1,124 @@
+product:
+    id: 'id'
+    type: 'Wear type'
+    size: 'Size'
+    colour: 'Colour'
+    sex: 'Sex'
+    price: 'Price'
+    list:
+        title: 'Product list'
+        header: 'Product list'
+        edit: 'Edit'
+        delete: 'Delete'
+    new: 
+        title: 'Product new'
+        header: 'Product new'
+    show: 
+        title: 'Product detail: '
+        header: 'Product: '    
+    form:
+        save: 'Save'
+        saveAndAdd: 'Save and Add'
+        woman: 'Woman'
+    flash:
+        price: 'Price value not valid'
+        
+client:
+    id: 'id'
+    name: 'Name'
+    phone: 'Phone'
+    list:
+        title: 'Customer details'
+        header: 'Customer details'
+        edit: 'Edit'
+        delete: 'Delete'
+    new:
+        title: 'Customer new'
+    show: 
+        title: 'Customer details: '
+    form:
+        save: 'Save'
+        saveAndAdd: 'Save and go Task'
+        search: 'Search'
+falla:
+    id: 'id'
+    name: 'Name'
+    list:
+        title: 'Fallas list'
+        header: 'Fallas list'
+        edit: 'Edit'
+        delete: 'Delete'
+    new:
+        title: 'Falla new'
+    show: 
+        title: 'Falla details: '
+    form:
+        save: 'Save'
+        saveAndAdd: 'Save and Add'
+task:
+    client: 'Customer'
+    clientNew: 'New Customer'
+    taskType: 'Wear type'
+    startDate: 'Start Date'
+    endDate: 'End Date'
+    taskStatus: 'Task status'
+    falla: 'Falla'
+    qty: 'Quantity'
+    product: 'Product'
+    id: 'Id'
+    name: 'Name'
+    sizeName: 'Size of name'
+    comment: 'Comment'
+    priceFull: 'Full price'
+    accountPrice: 'Account price'
+    statusPay: 'Status pay'
+    list:
+        title: 'Task of list'
+        header: 'Task of list'
+        edit: 'Edit'
+        delete: 'Delete'
+    new:
+        title: 'Task new'
+        add: 'Customer Add'
+    show: 
+        title: 'Task details: '
+        edit: 'Task edit'
+    form:
+        save: 'Save'
+        saveAndAdd: 'Save and Add'
+    search:
+        title: 'Task search'
+        searchTask: 'Search'
+menu:
+    user:
+        login: 'Login'
+        register: 'Register'
+        admin: 'Admin'
+        logout: 'Logout'
+        password_change: 'Password change'
+        edit: 'Edit'
+    footer:
+        student: 'Student:'
+    item:
+        list: 'List'
+        client: 'Customers'
+        task: 'Tasks'
+        product: 'Products'
+        falla: 'Fallas'
+index:
+    id: 'Id'
+    client: 'Customer'
+    taskType: 'Wear type'
+    taskStatus: 'Task status'
+    falla: 'Falla'
+    priceFull: 'Full price'
+    header: 'Last 5 orders'
+    nav:
+        tasks: 'Tasks'
+        searchTask: 'Task search'
+        search: 'Customers search'
+        client: 'Customers'
+admin:
+    list: 'List'
+    new: 'New'
+    product: 'Products'

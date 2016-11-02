@@ -1,0 +1,157 @@
+new_product:
+    path: /{_locale}/product/new
+    defaults: { _controller:AppBundle:Product:new, _locale: es }
+    requirements: 
+      _locale : es|en
+show_product:
+    path: /{_locale}/product/show/{id}
+    defaults: { _controller:AppBundle:Product:show, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+list_product:
+    path: /{_locale}/product/list
+    defaults: { _controller:AppBundle:Product:list, _locale: es }
+    requirements: 
+      _locale : es|en
+delete_product:
+    path: /{_locale}/product/delete/{id}
+    defaults: { _controller:AppBundle:Product:delete, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+edit_product:
+    path: /{_locale}/product/edit/{id}
+    defaults: { _controller:AppBundle:Product:edit, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+new_client:
+    path: /{_locale}/client/new
+    defaults: { _controller:AppBundle:Client:new, _locale: es }
+    requirements: 
+      _locale : es|en
+show_client:
+    path: /{_locale}/client/show/{id}
+    defaults: { _controller:AppBundle:Client:show, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+list_client:
+    path: /{_locale}/client/list
+    defaults: { _controller:AppBundle:Client:list, _locale: es }
+    requirements: 
+      _locale : es|en
+delete_client:
+    path: /{_locale}/client/delete/{id}
+    defaults: { _controller:AppBundle:Client:delete, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+edit_client:
+    path: /{_locale}/client/edit/{id}
+    defaults: { _controller:AppBundle:Client:edit, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+new_task:
+    path: /{_locale}/task/new
+    defaults: { _controller:AppBundle:Task:new, id:-1, _locale: es }
+    requirements: 
+      _locale : es|en
+new_task_client:
+    path: /{_locale}/task/new/client/{id}
+    defaults: { _controller:AppBundle:Task:new, _locale: es }
+    requirements: 
+      _locale : es|en
+show_task:
+    path: /{_locale}/task/show/{id}
+    defaults: { _controller:AppBundle:Task:show, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+list_task:
+    path: /{_locale}/task/list
+    defaults: { _controller:AppBundle:Task:list, _locale: es }
+    requirements: 
+      _locale : es|en
+delete_task:
+    path: /{_locale}/task/delete/{id}
+    defaults: { _controller:AppBundle:Task:delete, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+edit_task:
+    path: /{_locale}/task/edit/{id}
+    defaults: { _controller:AppBundle:Task:edit, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+new_falla:
+    path: /{_locale}/falla/new
+    defaults: { _controller:AppBundle:Falla:new, _locale: es }
+    requirements: 
+      _locale : es|en
+list_falla:
+    path: /{_locale}/falla/list
+    defaults: { _controller:AppBundle:Falla:list, _locale: es }
+    requirements: 
+      _locale : es|en
+show_falla:
+    path: /{_locale}/falla/show/{id}
+    defaults: { _controller:AppBundle:Falla:show, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+delete_falla:
+    path: /{_locale}/falla/delete/{id}
+    defaults: { _controller:AppBundle:Falla:delete, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+edit_falla:
+    path: /{_locale}/falla/edit/{id}
+    defaults: { _controller:AppBundle:Falla:edit, _locale: es }
+    requirements:
+      id: \d+
+      _locale : es|en
+indice:
+    path: /{_locale}
+    defaults: { _controller:AppBundle:Default:index, _locale: es }
+    requirements: 
+      _locale : es|en
+admin:
+    path: /{_locale}/admin
+    defaults: { _controller:AppBundle:Default:admin, _locale: es }
+    requirements: 
+      _locale : es|en
+admin_list_falla:
+    path: /{_locale}/admin/falla
+    defaults: { _controller:AppBundle:Default:adminListFalla, _locale: es }
+    requirements: 
+      _locale : es|en
+admin_new_falla:
+    path: /{_locale}/admin/falla/new
+    defaults: { _controller:AppBundle:Falla:new, _locale: es }
+    requirements: 
+      _locale : es|en
+admin_list_product:
+    path: /{_locale}/admin/product
+    defaults: { _controller:AppBundle:Default:adminListProduct, _locale: es }
+    requirements: 
+      _locale : es|en
+admin_new_product:
+    path: /{_locale}/admin/product/new
+    defaults: { _controller:AppBundle:Product:new, _locale: es }
+    requirements: 
+      _locale : es|en
+search_client:
+    path: /{_locale}/client/search
+    defaults: { _controller:AppBundle:Client:search, _locale: es }
+    requirements: 
+      _locale : es|en
+search_task:
+    path: /{_locale}/task/search
+    defaults: { _controller:AppBundle:Task:searchTask, _locale: es }
+    requirements: 
+      _locale : es|en

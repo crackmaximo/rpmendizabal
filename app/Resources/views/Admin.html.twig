@@ -1,0 +1,38 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block content %}
+
+<div class="container-fluid">
+      
+  <div class="row row-offcanvas row-offcanvas-left">
+        
+    <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
+           
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="">Fallas</a></li>
+        <li><a href="{{path ('admin_new_falla') }}">{{ 'admin.new' | trans }}</a></li>
+        <li><a href="{{path ('admin_list_falla') }}">{{ 'admin.list' | trans }}</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+      	<li class="active"><a href="">{{ 'admin.product' | trans }}</a></li>
+        <li><a href="{{path ('admin_new_product') }}">{{ 'admin.new' | trans }}</a></li>
+        <li><a href="{{path ('admin_list_product') }}">{{ 'admin.list' | trans }}</a></li>
+      </ul>  
+    </div><!--/span-->
+      
+    <div class="col-sm-9 col-md-10 main">
+    {% block admin %} {% endblock %} 
+    </div><!--/row-->
+    
+	</div>
+</div><!--/.container-->
+
+
+        
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'client.show.title' | trans }}{% endblock %}
+
+{% block content %}
+
+<h2>{{ 'client.show.title' | trans }}</h2>
+<table class="table table-striped">
+  
+  <tbody>
+   	<tr>
+    	<th>{{ 'client.id' | trans }}</th>
+      	<th>{{ 'client.name' | trans }}</th>
+      	<th>{{ 'client.phone' | trans }}</th>
+   	</tr>
+   	{% for cliente in cliente %}
+    <tr>
+    	<td><a href="{{ path('show_client',{'id': cliente.getId }) }}">{{  cliente.getId }}</a></td>
+      	<td>{{ cliente.getName }}</td>
+      	<td>{{ cliente.getPhone }}</td>
+    </tr>
+    <tr>
+  </tbody>
+  {% endfor %}  
+</table>
+{% endblock %}

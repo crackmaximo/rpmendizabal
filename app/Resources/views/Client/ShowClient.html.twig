@@ -1,0 +1,50 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'client.show.title' | trans }}{{ client.getName }} {% endblock %}
+
+{% block content %}
+
+<h2>{{ 'client.show.title' | trans }}{{ client.getName }}</h2>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>{{ 'client.name' | trans }}</th>
+      <td>{{ client.getName }}</td>
+    </tr>
+    <tr>
+      <th>{{ 'client.phone' | trans }}</th>
+      <td>{{ client.getPhone }}</td>
+    </tr>
+    <tr>
+  </tbody>  
+</table>
+<h3>{{ 'task.list.header' | trans }}: {{ client.getName }}</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{{ 'task.id' | trans }}</th>
+      <th>{{ 'task.taskType' | trans }}</th>
+      <th>{{ 'task.taskStatus' | trans }}</th>
+      <th>{{ 'task.startDate' | trans }}</th>
+      <th>{{ 'task.endDate' | trans }}</th>
+      <th>{{ 'task.falla' | trans }}</th>
+      <th>{{ 'task.priceFull' | trans }}</th>   
+    </tr>
+  </thead>
+	{% for task in task %}
+  <tbody>
+    <tr>
+      	<td><a href="{{ path('show_task',{'id': task.getId }) }}">{{  task.getId }}</a></td>
+    	<td>{{  task.getTaskType }}</td>
+    	<td>{{  task.getTaskStatus }}</td>
+    	<td>{{ task.getStartDate }}</td>
+    	 <td>{{ task.getEndDate|date("d/m/Y") }}</td>
+    	<td>{{  task.getFalla }}</td>
+    	<td>€{{  task.getPriceFull }}</td>
+    </tr>
+  </tbody>  
+{% endfor %}
+</table>  
+{% endblock %}

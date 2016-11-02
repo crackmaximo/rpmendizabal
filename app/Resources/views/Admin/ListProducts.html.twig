@@ -1,0 +1,36 @@
+{% extends "Admin.html.twig" %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'product.list.title' | trans }}{% endblock %}
+{% block admin %}
+<h3>{{ 'product.list.header' | trans }}</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{{ 'product.id' | trans }}</th>
+      <th>{{ 'product.type' | trans }}</th>
+      <th>{{ 'product.size' | trans }}</th>
+      <th>{{ 'product.colour' | trans }}</th>
+      <th>{{ 'product.sex' | trans }}</th>
+      <th>{{ 'product.price' | trans }}</th>
+      <th>{{ 'product.list.edit' | trans }}</th>
+      <th>{{ 'product.list.delete' | trans }}</th>      
+    </tr>
+  </thead>
+	{% for producto in productos %}
+  <tbody>
+    <tr>
+      	<td><a href="{{ path('show_product',{'id': producto.getId }) }}">{{  producto.getId }}</a></td>
+      	<td>{{  producto.getWearType }}</td>
+    	<td>{{  producto.getSize }}</td>
+    	<td>{{  producto.getColour }}</td>
+    	<td>{{  producto.getSex }}</td>
+    	<td>€{{  producto.getPrice }}</td>
+    	<td><a href="{{ path('edit_product',{'id': producto.getId }) }}"<span class="glyphicon glyphicon-edit"></span></a></td>
+    	<td><a href="{{ path('delete_product',{'id': producto.getId }) }}"<span class="glyphicon glyphicon-trash"></span></a></td>
+    </tr>
+  </tbody>  
+{% endfor %}
+</table>
+{% endblock %}
